@@ -1,13 +1,19 @@
-﻿IF NOT EXISTS
-            (SELECT 1
-            FROM sys.procedures pro
-	        INNER JOIN sys.schemas sch ON sch.schema_id = pro.schema_id
-            WHERE sch.[name] = 'dbo'
-	        AND pro.[name] = 'MySproc')
+﻿IF NOT EXISTS 
+			(SELECT 1 
+			FROM sys.objects obj 
+			WHERE obj.schema_id = SCHEMA_ID('dbo')
+			AND obj.[Name] = 'MyFunction'
+			AND obj.[Type] IN ( N'FN', N'IF', N'TF', N'FS', N'FT' )) 
 BEGIN
-    EXECUTE('CREATE PROCEDURE dbo.MySproc AS SELECT NULL')
+	--Create dummy object
+    EXECUTE('CREATE FUNCTION dbo.MyFunction() RETURNS INT AS BEGIN RETURN (SELECT 0) END')
 END
 GO
 
-ALTER PROCEDURE dbo.MySproc AS
-    SELECT 1
+--Alter the object rather than delete and recreate so as to retain permissions, plans, history, etc, gregt
+ALTER FUNCTION dbo.MyFunction()
+RETURNS INT
+AS
+BEGIN
+	RETURN (SELECT 1)
+END
