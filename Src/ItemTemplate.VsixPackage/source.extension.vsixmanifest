@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="A20D98B0-87D6-44DB-86FB-6244668BB060" Version="1.11.13" Language="en-US" Publisher="Greg Trevellick" />
+        <Identity Id="3479F1A2-D8B6-44C0-86D5-D9F3D77C5E8E" Version="1.11.13" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>SQL Server Function</DisplayName>
         <Description xml:space="preserve">An item template for creating / altering a SQL Server function.</Description>
         <MoreInfo>https://github.com/GregTrevellick/VsixItemTemplateSqlScriptFunction</MoreInfo>
