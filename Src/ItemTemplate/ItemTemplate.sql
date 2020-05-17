@@ -10,7 +10,7 @@ BEGIN
 END
 GO
 
---Alter the object rather than delete and recreate so as to retain permissions, plans, history, etc, gregt
+--Alter the object rather than delete and recreate so as to retain permissions, plans, history, etc
 ALTER FUNCTION dbo.MyFunction()
 RETURNS INT
 AS
