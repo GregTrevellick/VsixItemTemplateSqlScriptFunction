@@ -1,4 +1,6 @@
-﻿IF NOT EXISTS 
+﻿/* Changes to this template can be proposed at https://github.com/GregTrevellick/VsixItemTemplateSqlScriptFunction/blob/master/Src/ItemTemplate/ItemTemplate.sql */
+
+IF NOT EXISTS 
 			(SELECT 1 
 			FROM sys.objects obj 
 			WHERE obj.schema_id = SCHEMA_ID('dbo')
